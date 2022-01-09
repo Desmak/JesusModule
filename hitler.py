@@ -8,13 +8,13 @@ import io
 from textwrap import wrap
 
 def register(cb):
-	cb(HitlerMod())
+	cb(JesusMod())
 	
-class HitlerMod(loader.Module):
-	"""Hitler"""
+class JesusMod(loader.Module):
+	"""Jesus"""
 	strings = {
-		'name': 'Hitler',
-		'usage': 'Напиши <code>.help Цитатник Гитлера</code>',
+		'name': 'Jesus',
+		'usage': 'Напиши <code>.help Цитатник Иисуса</code>',
 	}
 	def __init__(self):
 		self.name = self.strings['name']
@@ -26,7 +26,7 @@ class HitlerMod(loader.Module):
 		self.me = await client.get_me()
 		
 	async def hcmd(self, message):
-		""".h <реплай на сообщение/свой текст>\n@offsd подпишись-пожалеешь"""
+		""".JC <реплай на сообщение/свой текст>\n@offsd подпишись-пожалеешь"""
 		
 		ufr = requests.get("https://github.com/Sad0ff/modules-ftg/raw/master/open-sans.ttf")
 		f = ufr.content
@@ -41,7 +41,7 @@ class HitlerMod(loader.Module):
 				txt = reply.raw_text
 		else:
 			txt = utils.get_args_raw(message)
-		await message.edit("<code>Ehre sei Hitler...</code>")
+		await message.edit("<code>Так говорил Иисус...</code>")
 		pic = requests.get("https://raw.githubusercontent.com/Sad0ff/modules-ftg/master/offsd.jpg")
 		pic.raw.decode_content = True
 		img = Image.open(io.BytesIO(pic.content)).convert("RGB")
