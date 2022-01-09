@@ -1,3 +1,5 @@
+# https://github.com/Desmak/JesusModule/raw/master/offsd.jpg
+
 from telethon import events
 from .. import loader, utils
 import os
@@ -25,7 +27,7 @@ class JesusMod(loader.Module):
 		self._client = client
 		self.me = await client.get_me()
 		
-	async def hcmd(self, message):
+	async def JCmd(self, message):
 		""".JC <реплай на сообщение/свой текст>\n@offsd подпишись-пожалеешь"""
 		
 		ufr = requests.get("https://github.com/Sad0ff/modules-ftg/raw/master/open-sans.ttf")
@@ -42,7 +44,7 @@ class JesusMod(loader.Module):
 		else:
 			txt = utils.get_args_raw(message)
 		await message.edit("<code>Так говорил Иисус...</code>")
-		pic = requests.get("https://raw.githubusercontent.com/Sad0ff/modules-ftg/master/offsd.jpg")
+		pic = requests.get("https://github.com/Desmak/JesusModule/raw/master/offsd.jpg")
 		pic.raw.decode_content = True
 		img = Image.open(io.BytesIO(pic.content)).convert("RGB")
  
