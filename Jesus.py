@@ -1,5 +1,3 @@
-# https://github.com/Desmak/JesusModule/raw/master/offsd.jpg
-
 from telethon import events
 from .. import loader, utils
 import os
